@@ -1,0 +1,7 @@
+@use "../helpers/mixins" as *;
+
+.text-center-xs {
+  @include breakpoint(mobile) {
+    text-align: center;
+  }
+}

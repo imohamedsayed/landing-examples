@@ -1,0 +1,11 @@
+@use "../helpers/mixins" as *;
+* {
+  @include prefixer(box-sizing, border-box, webkit moz);
+}
+
+body {
+  font: {
+    family: "Tahoma";
+    size: 16px;
+  }
+}

@@ -1,0 +1,44 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+.main-btn {
+  background-color: rgba($skin-color, 0.8);
+  color: #fff;
+  text-align: center;
+  max-width: 120px;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  @include prefixer(transition, all 0.3s ease, webkit moz o ms);
+  &:hover {
+    background-color: $skin-color;
+  }
+}
+
+.toggler {
+  background-color: $skin-color;
+  width: 60px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  margin: auto;
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: none;
+  @include breakpoint(mobile) {
+    display: block;
+  }
+  span {
+    display: block;
+    background-color: #fff;
+    height: 4px;
+    width: 45px;
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+  }
+}

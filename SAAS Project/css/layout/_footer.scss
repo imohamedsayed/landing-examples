@@ -1,0 +1,146 @@
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+%main-input-style {
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  transition: all 0.3s ease;
+  &:focus {
+    outline: none;
+    transform: scale(1.05);
+  }
+}
+
+.footer {
+  background-color: #e2e2e2;
+  overflow: hidden;
+  padding-top: 50px;
+  .gallery,
+  .info,
+  .contact {
+    float: $float-left;
+  }
+  .gallery {
+    width: 50%;
+    .img-box {
+      overflow: hidden;
+      margin-bottom: 20px;
+      img {
+        float: $float-left;
+        width: 150px;
+        height: 150px;
+      }
+      .text {
+        float: $float-left;
+        width: calc(100% - 150px);
+        padding: 0 15px;
+        h4 {
+          color: $skin-color;
+          margin: 10px 0 0;
+        }
+        p {
+          color: #888;
+          line-height: 1.9;
+          margin-top: 8px;
+        }
+      }
+    }
+    @include breakpoint(small) {
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      float: none;
+      margin-bottom: 20px;
+      .section-title {
+        text-align: center;
+      }
+      .img-box {
+        text-align: center;
+        img {
+          float: none !important;
+        }
+        .text {
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .info {
+    width: 25%;
+    color: #888;
+    .working {
+      font-weight: bold;
+    }
+    .myEmail {
+      color: $skin-color;
+    }
+    p {
+      line-height: 0.5;
+      margin-top: 20px;
+    }
+  }
+
+  .contact {
+    width: 25%;
+
+    input {
+      height: 40px;
+      @extend %main-input-style;
+    }
+    textarea {
+      height: 120px;
+      @extend %main-input-style;
+    }
+  }
+  .info,
+  .contact {
+    @include breakpoint(small) {
+      width: 50%;
+    }
+    @include breakpoint(mobile) {
+      width: 100%;
+      float: none;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+
+  .section-title {
+    font-weight: normal;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .copyright {
+    color: #888;
+    padding: 25px 0;
+    border-top: 1px solid #c5c5c5;
+    overflow: hidden;
+    .text,
+    .author {
+      width: 50%;
+      float: $float-left;
+    }
+    .author {
+      text-align: $text-right;
+    }
+    @include breakpoint(mobile) {
+      .text {
+        margin-bottom: 10px;
+      }
+      .text,
+      .author {
+        float: none !important;
+        width: 100%;
+        text-align: center !important;
+      }
+    }
+  }
+}
